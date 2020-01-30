@@ -1,0 +1,7 @@
+//Display list of post on the homepage
+
+write code for middleware and authentication
+
+introduce ability to upload pictures
+
+clicking on post on homepage should take you to full article

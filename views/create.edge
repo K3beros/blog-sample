@@ -1,0 +1,58 @@
+@layout('layouts.app')
+
+@section('content')
+
+ <!-- Page Header -->
+ <header class="masthead" style="background-image: url('/img/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Write a new Post...</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+      <div class="row">
+          <div class="offset-2 col-md-6">
+              <form action="/post/save" method="POST">
+                <div class="control-group">
+                  <div class="form-group controls floating-label-form-group">
+                    <label for="">Username</label>
+                    <input type="text" placeholder="Username" name="username" class="form-control">
+                  </div>
+              </div>
+                  <div class="control-group">
+                      <div class="form-group controls floating-label-form-group">
+                        <label for="">Title</label>
+                        <input type="text" placeholder="Title" name="title" class="form-control">
+                      </div>
+                  </div>
+                  <div class="control-group">
+                    <div class="form-group controls floating-label-form-group">
+                      <label for="">Description</label>
+                      <input type="text" placeholder="Description" name="description" class="form-control">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group controls floating-label-form-group">
+                      <label for="">Content</label>
+                      <textarea name="content" placeholder="Write your story here..." id="" cols="30" rows="10" class="form-control z-depth-1 my-2"></textarea>
+                    </div>
+                </div>
+                <div class="form-group my-3 text-center">
+                    <button class=" btn btn-primary">
+                        Create
+                    </button>
+                </div>
+              </form>
+          </div>
+      </div>
+  </div>
+
+
+  @endsection

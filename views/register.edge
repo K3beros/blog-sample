@@ -1,0 +1,75 @@
+@layout('layouts.app')
+
+@section('title')
+  Register
+@endsection
+
+@section('content')
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('/img/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>SignUp For This Service</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+      <div class="row">
+          <div class="offset-2 col-md-6">
+              <form action="/register" method="POST">
+                <div class="control-group">
+                  <div class="form-group controls floating-label-form-group">
+                    <label for="">Name</label>
+                    <input type="text" placeholder="Name" name="name" class="form-control">
+                  </div>
+              </div>
+                  <div class="control-group">
+                      <div class="form-group controls floating-label-form-group">
+                        <label for="">Email</label>
+                        <input type="email" placeholder="Email" name="email" class="form-control">
+                      </div>
+                  </div>
+
+                  <div class="control-group">
+                    <div class="form-group controls floating-label-form-group">
+                      <label for="">Username</label>
+                      <input type="text" placeholder="Username" name="username" class="form-control">
+                    </div>
+                </div>
+
+                  <div class="control-group">
+                    <div class="form-group controls floating-label-form-group">
+                      <label for="">Password</label>
+                      <input type="password" placeholder="Password" name="password" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="control-group">
+                    <div class="form-group controls floating-label-form-group">
+                      <label for="">Profession</label>
+                      <input type="text" placeholder="Profession" name="profession" class="form-control">
+                    </div>
+                  </div>
+
+                  
+                 
+
+                
+                <div class="form-group my-3 text-center">
+                    <button class=" btn btn-primary">
+                        SignUp
+                    </button>
+                </div>
+              </form>
+          </div>
+      </div>
+  </div>
+  
+@endsection
