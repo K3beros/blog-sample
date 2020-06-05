@@ -7,7 +7,9 @@ const expressEdge = require('express-edge')
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 const session = require('express-session')
+const config = require('./config/dbConfig')
 
+let dbUrl = config.dbUrl;
 
 
 //custom modules required
@@ -18,8 +20,32 @@ const createPost = require('./controllers/createPost')
 
 
 const app = new express()
+const ENV = process.env.NODE_ENV
 
-mongoose.connect('mongodb://localhost/blog', { useNewUrlParser: true})
+if(ENV === 'production') {
+    dbUrl = encodeURI(config.dbUrl)
+}
+
+mongoose.connect(dbUrl, {
+     useNewUrlParser: true,
+    }).then((conn) =>{
+
+        // console.log('DB Connected');
+     
+     }).catch(error => {
+         console.log('DB Error', error);
+     });
+     
+     mongoose.connection.on('connected', function () {
+         console.log('Mongoose connected to ' + dbUrl);
+     });
+     mongoose.connection.on('error',function (err) {
+         console.log('Mongoose connection error: ' + err);
+     });
+     mongoose.connection.on('disconnected', function () {
+         console.log('Mongoose disconnected');
+     });
+
 
 
 app.use(session({
